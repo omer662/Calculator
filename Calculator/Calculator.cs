@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Calculator
 {
-    class Program
+    class Calculator
     {
         static CalculatorFunctions functions = new CalculatorFunctions();
 
@@ -20,7 +20,7 @@ namespace Calculator
                 functions.CalculateFunc(input);
         }
 
-        static void Calculator()
+        static void Run()
         {
             Console.WriteLine("Welcome. Enter 'help' for explaination.");
             Console.Write("-> ");
@@ -37,7 +37,7 @@ namespace Calculator
         static void Main()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Calculator();
+            Run();
         }
     }
 }
