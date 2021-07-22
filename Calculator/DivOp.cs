@@ -44,7 +44,7 @@ namespace Calculator
             else if (newOp2 is NumOp && newOp2.Calculate(0) == 1)
                 return newOp1;
             else
-                return new DivOp(newOp1, newOp2, true);
+                return new DivOp(newOp1, newOp2, normal);
         }
 
         public string GetSign() { return "/ "; }

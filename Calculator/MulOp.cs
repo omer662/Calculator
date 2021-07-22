@@ -47,9 +47,9 @@ namespace Calculator
                 if (newOp2.Calculate(0) == 1)
                     return newOp1;
                 else
-                    return new MulOp(newOp2, newOp1, true);
+                    return new MulOp(newOp2, newOp1, normal);
             else
-                return new MulOp(newOp1, newOp2, true);
+                return new MulOp(newOp1, newOp2, normal);
         }
 
         public string GetSign() { return "* "; }

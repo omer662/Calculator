@@ -44,7 +44,7 @@ namespace Calculator
             else if (newOp1 is XOp && newOp2 is XOp)
                 return new NumOp(0);
             else
-                return new MinusOp(newOp1, newOp2, true);
+                return new MinusOp(newOp1, newOp2, normal);
         }
 
         public string GetSign() { return "- "; }

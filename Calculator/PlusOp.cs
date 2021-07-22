@@ -43,7 +43,7 @@ namespace Calculator
                 return newOp2;
             else if (newOp2 is NumOp && newOp2.Calculate(0) == 0)
                 return newOp1;
-            return new PlusOp(newOp1, newOp2, true);
+            return new PlusOp(newOp1, newOp2, normal);
         }
 
         public string GetSign() { return "+ "; }
