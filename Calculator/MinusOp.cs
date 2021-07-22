@@ -8,13 +8,12 @@ namespace Calculator
     {
         private IOp op1;
         private IOp op2;
-        private bool normal;
+        private bool normal = false;
 
         public MinusOp(IOp op1, IOp op2)
         {
             this.op1 = op1;
             this.op2 = op2;
-            this.normal = false;
         }
 
         public MinusOp(IOp op1, IOp op2, bool normal)
