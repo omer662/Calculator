@@ -166,12 +166,18 @@ namespace Calculator
                 );
         }
 
-        public void NewFunction(string input)
+        public bool NewFunction(string input, bool normal)
         {
+            if (input.Length < 6)
+                return false;
             char fName = input[5];
             Console.Write(fName + "(x) = ");
             string funcStr = Console.ReadLine();
-            IOp func = NormalToTree(funcStr).Clean();
+            IOp func;
+            if (normal)
+                func = NormalToTree(funcStr).Clean();
+            else
+                func = PolishToTree(funcStr).Clean();
             if (names.Contains(fName))
             {
                 functions[names.IndexOf(fName)] = func;
@@ -181,10 +187,13 @@ namespace Calculator
                 functions.Add(func);
                 names.Add(fName);
             }
+            return true;
         }
 
-        public void ShowFunction(string input)
+        public bool ShowFunction(string input)
         {
+            if (input.Length < 6)
+                return false;
             char fName = input[5];
             if (!names.Contains(fName))
                 Console.WriteLine("Function not found.");
@@ -196,10 +205,13 @@ namespace Calculator
                     func = func.GetDerivative();
                 Console.WriteLine(func.ToString());
             }
+            return true;
         }
 
-        public void CalculateFunc(string input)
+        public bool CalculateFunc(string input)
         {
+            if (input.Length < 6)
+                return false;
             char fName = input[5];
             if (!names.Contains(fName))
                 Console.WriteLine("Function not found.");
@@ -212,6 +224,7 @@ namespace Calculator
                     func = func.GetDerivative();
                 Console.WriteLine(func.Calculate(val));
             }
+            return true;
         }
     }
 }
