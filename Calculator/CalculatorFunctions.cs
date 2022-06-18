@@ -67,7 +67,7 @@ namespace Calculator
 
                             // else, there is a multiplier for the XOp
                             else
-                                return new MulOp(new NumOp(n), new XOp());
+                                return new MulOp(new NumOp(n), new XOp(), true);
                     }
                     return new NumOp(n); // Return new NumOp with value n
                 }
