@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Calculator
 {
@@ -47,7 +46,7 @@ namespace Calculator
             if (opIndex == -1) // If no action was found
             {
                 int pStart = str.IndexOf('(');
-                int pEnd = str.IndexOf(')');
+                int pEnd = str.LastIndexOf(')');
                 if (pStart == -1 && pEnd == -1) // If this substring is not parentheses (number)
                 {
                     int n = 0;
